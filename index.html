@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crypto GOD Signals — Private Telegram Channel</title>
+  <meta name="description" content="Minimal bridge page for a private Telegram channel with ready‑to‑trade crypto signals." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div id="vignette"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="logo"><i>₿</i> Crypto GOD <span class="dim">| Signals</span></div>
+      <a class="btn js-cta" href="https://t.me/+JJFtP7XPyKEzZmZi" target="_blank" rel="noopener nofollow" data-goal="header">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 3.24L2.87 10.35c-.86.34-.86 1.6.02 1.91l4.8 1.66 1.86 5.95c.24.78 1.21.88 1.66.18l2.69-4.08 5.07 3.74c.72.53 1.75.13 1.93-.75l3.1-14.9c.2-.96-.64-1.75-1.9-1.42zM8.5 13.74l9.9-6.11c.18-.11.36.13.21.27l-7.34 6.87c-.13.12-.21.28-.24.45l-.36 2.28c-.03.21-.33.23-.39.03l-1.77-5.79z"/></svg>
+        Join the channel
+      </a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <p class="sub">Private Telegram channel</p>
+          <h1>Ready‑to‑trade crypto signals.<br/>Just mirror the trades — <span class="blue">no charts required</span>.</h1>
+          <p class="sub">We publish entry price, stop‑loss and take‑profit targets. You execute on your exchange in a few taps.</p>
+          <div class="kpi">
+            <span class="pill">Real‑time alerts</span>
+            <span class="pill">Clear Entry / SL / TP</span>
+            <span class="pill">3 simple steps</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn js-cta" href="https://t.me/+JJFtP7XPyKEzZmZi" target="_blank" rel="noopener nofollow" data-goal="primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 3.24L2.87 10.35c-.86.34-.86 1.6.02 1.91l4.8 1.66 1.86 5.95c.24.78 1.21.88 1.66.18l2.69-4.08 5.07 3.74c.72.53 1.75.13 1.93-.75l3.1-14.9c.2-.96-.64-1.75-1.9-1.42zM8.5 13.74l9.9-6.11c.18-.11.36.13.21.27l-7.34 6.87c-.13.12-.21.28-.24.45l-.36 2.28c-.03.21-.33.23-.39.03l-1.77-5.79z"/></svg>
+              Join now
+            </a>
+            <a class="btn ghost" href="#how">How it works</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Live market vibe</h3>
+          <p class="sub m0">Trading-style background with moving candlesticks and floating BUY/SELL tags.</p>
+        </div>
+      </section>
+
+      <section class="grid" id="how">
+        <div class="card step"><b>1. Join the channel</b><br/><span class="sub">Click the button and get access.</span></div>
+        <div class="card step"><b>2. Receive signals</b><br/><span class="sub">Each post contains pair, Entry, SL and TP targets.</span></div>
+        <div class="card step"><b>3. Mirror the trades</b><br/><span class="sub">Open your exchange and place the orders.</span></div>
+      </section>
+
+      <section class="center">
+        <a class="btn js-cta" href="https://t.me/+JJFtP7XPyKEzZmZi" target="_blank" rel="noopener nofollow" data-goal="final">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 3.24L2.87 10.35c-.86.34-.86 1.6.02 1.91l4.8 1.66 1.86 5.95c.24.78 1.21.88 1.66.18l2.69-4.08 5.07 3.74c.72.53 1.75.13 1.93-.75l3.1-14.9c.2-.96-.64-1.75-1.9-1.42z"/></svg>
+          Join the private Telegram
+        </a>
+        <p class="sub note">This page is for information only. Crypto trading is risky.</p>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 Crypto GOD | Signals. This is not financial advice. Past performance does not guarantee future results.
+    </footer>
+  </div>
+
+  <!-- Sticky CTA for mobile -->
+  <div class="sticky-cta">
+    <div class="row">
+      <div class="strong">Join Crypto GOD | Signals</div>
+      <a class="btn js-cta" href="https://t.me/+JJFtP7XPyKEzZmZi" target="_blank" rel="noopener nofollow" data-goal="sticky">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 3.24L2.87 10.35c-.86.34-.86 1.6.02 1.91l4.8 1.66 1.86 5.95c.24.78 1.21.88 1.66.18l2.69-4.08 5.07 3.74c.72.53 1.75.13 1.93-.75l3.1-14.9c.2-.96-.64-1.75-1.9-1.42z"/></svg>
+        Join
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // ===== Background: candles + BUY/SELL tags =====
+    (function(){
+      const c = document.getElementById('bg');
+      const ctx = c.getContext('2d');
+      function fit(){ c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio; ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);} fit();
+      addEventListener('resize', fit);
+
+      const GRID = '#101827', BG = '#0b1220', UP='#34d399', DN='#ef4444';
+      let pxPerCandle = 14, bodyW=7, wickW=2, speed=1.0;
+      let N = Math.ceil(innerWidth/pxPerCandle) + 40;
+      let C = [], last = {close:1000};
+
+      function newC(prev){
+        const o = prev.close; const drift = (Math.random()-0.5)*18; const c2 = o+drift;
+        const range = 8+Math.random()*18; const h = Math.max(o,c2)+Math.random()*range; const l = Math.min(o,c2)-Math.random()*range;
+        return {open:o, close:c2, high:h, low:l, x:0};
+      }
+      for(let i=0;i<N;i++){ const cd = newC(last); cd.x = i*pxPerCandle; C.push(cd); last = cd; }
+
+      const tags = [];
+      function spawnTag(){
+        const cd = C[(Math.random()*C.length)|0];
+        const type = Math.random()>0.5 ? 'BUY' : 'SELL';
+        const base = innerHeight*0.58, scale = innerWidth<900?1.2:1.4;
+        const y = base - ((type==='BUY'?cd.low:cd.high)-1000)*scale + (type==='BUY'? -10: 10);
+        const color = type==='BUY'? 'rgba(52,211,153,.95)' : 'rgba(239,68,68,.95)';
+        tags.push({type, x: cd.x, y, color, life: 240});
+      }
+      function rr(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+      function draw(){
+        const w = innerWidth, h = innerHeight;
+        ctx.fillStyle = BG; ctx.fillRect(0,0,w,h);
+        // grid
+        ctx.strokeStyle = GRID; ctx.lineWidth = 1; ctx.globalAlpha = .9;
+        for(let gx=0; gx<w; gx+=88){ ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,h); ctx.stroke(); }
+        for(let gy=0; gy<h; gy+=64){ ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(w,gy); ctx.stroke(); }
+        ctx.globalAlpha = 1;
+
+        // move candles
+        for(let i=0;i<C.length;i++){ C[i].x -= speed; }
+        while(C.length && C[0].x < -pxPerCandle){ C.shift(); }
+        while(C.length < N){ const last = C[C.length-1]; const cd = newC(last); cd.x = last.x + pxPerCandle; C.push(cd); }
+
+        const base = h*0.58, scale = (innerWidth<900?1.2:1.4);
+        // candles
+        for(let j=0;j<C.length;j++){
+          const cd = C[j], x=cd.x;
+          const open = base - (cd.open-1000)*scale;
+          const close= base - (cd.close-1000)*scale;
+          const high = base - (cd.high-1000)*scale;
+          const low  = base - (cd.low -1000)*scale;
+          const up = close >= open;
+          ctx.strokeStyle = up? UP : DN; ctx.lineWidth = wickW; ctx.beginPath(); ctx.moveTo(x, high); ctx.lineTo(x, low); ctx.stroke();
+          ctx.fillStyle = up? UP : DN; ctx.fillRect(x-bodyW/2, Math.min(open,close), bodyW, Math.max(3, Math.abs(close-open)));
+        }
+
+        // tags
+        if(Math.random() < 0.04 && tags.length < 10) spawnTag();
+        for(let t=0;t<tags.length;t++){
+          const tag = tags[t]; tag.x -= speed; tag.life -= 1; if(tag.life<=0) continue;
+          const w2=64, h2=24, r=10;
+          ctx.globalAlpha = 0.95; ctx.fillStyle = tag.color; rr(tag.x - w2/2, tag.y - h2/2, w2, h2, r); ctx.fill();
+          ctx.beginPath(); ctx.moveTo(tag.x, tag.y + (tag.type==='BUY'? h2/2 : -h2/2));
+          ctx.lineTo(tag.x-6, tag.y + (tag.type==='BUY'? h2/2+8 : -h2/2-8));
+          ctx.lineTo(tag.x+6, tag.y + (tag.type==='BUY'? h2/2+8 : -h2/2-8)); ctx.closePath(); ctx.fill();
+          ctx.fillStyle = '#0b1220'; ctx.font = 'bold 12px Inter,Arial'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(tag.type, tag.x, tag.y);
+        }
+        for(let i=tags.length-1;i>=0;i--){ if(tags[i].life<=0 || tags[i].x<-80) tags.splice(i,1); }
+
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // basic tracking stub
+    (function(){
+      function track(event, payload){ window.dataLayer = window.dataLayer || []; window.dataLayer.push({event: event, ...payload}); }
+      document.addEventListener('click', function(e){ const t=e.target.closest('.js-cta'); if(t){ track('cta_click',{goal:t.dataset.goal||'cta'});} });
+    })();
+  </script>
+</body>
+</html>
